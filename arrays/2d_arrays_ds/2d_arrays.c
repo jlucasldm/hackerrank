@@ -25,7 +25,7 @@ int parse_int(char *);
 
 int hourglassSum(int arr_rows, int arr_columns, int **arr)
 {
-    int sum = -46;
+    int sum = -63;
     int aux;
 
     for (int i = 0; i < arr_rows - 2; i++)
