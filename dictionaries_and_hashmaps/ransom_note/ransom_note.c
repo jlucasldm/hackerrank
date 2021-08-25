@@ -25,7 +25,34 @@ int parse_int(char*);
  */
 
 void checkMagazine(int magazine_count, char** magazine, int note_count, char** note) {
-    printf("%s", magazine[1]);
+    bool found = false;
+
+    if(note_count > magazine_count){
+        printf("No\n");
+        return;
+    }
+
+    for(int i = 0; i < note_count; i++){
+        //printf("note:\t%s\n", note[i]);
+        for(int j = 0; j < magazine_count; j++){
+            //printf("magazine:\t%s\n", magazine[j]);
+            //printf("is equal:\t%d\n", *magazine[j] == *note[i]);
+            if(magazine[j] == note[i]){
+                found = true;
+                //printf("%s\n", note[i]);
+            }
+        }
+
+        if(found == false){
+            printf("No\n");
+            return;
+        }
+
+        found = false;
+    }
+
+    printf("Yes\n");
+    return;
 }
 
 int main()

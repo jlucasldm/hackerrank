@@ -1,10 +1,11 @@
-#!/bin/python3
+
 
 import math
 import os
 import random
 import re
 import sys
+from collections import Counter
 
 #
 # Complete the 'checkMagazine' function below.
@@ -16,8 +17,15 @@ import sys
 
 def checkMagazine(magazine, note):
     # Write your code here
-    print(magazine)
-    print(note)
+    magazine_words = Counter(magazine)
+    note_words = Counter(note)
+
+    if magazine_words & note_words == note_words:
+        print("Yes")
+    else:
+        print("No")
+
+    return
 
 if __name__ == '__main__':
     first_multiple_input = input().rstrip().split()
